@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C4Sharp.DocTool", "src\C4Sharp.DocTool\C4Sharp.DocTool.csproj", "{115358ED-778B-4277-81BE-60C1968CB2AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{115358ED-778B-4277-81BE-60C1968CB2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115358ED-778B-4277-81BE-60C1968CB2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115358ED-778B-4277-81BE-60C1968CB2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115358ED-778B-4277-81BE-60C1968CB2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04950B77-286D-4F8A-911F-6776E25E5D71}
+	EndGlobalSection
+EndGlobal
