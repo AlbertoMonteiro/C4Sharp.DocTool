@@ -1,10 +1,9 @@
-﻿using C4Sharp.Diagrams.Core;
-using C4Sharp.DocTool;
-using C4Sharp.Models;
+﻿using C4Sharp.DocTool;
 using C4Sharp.Models.Plantuml.IO;
-using C4Sharp.Models.Relationships;
 
 var rootCommand = new RootCommand();
+
+rootCommand.AddOption(new Option<string>(new [] { "--slnPath", "-s" }, getDefaultValue: () => ".","The solution file path, if not informed it will search for the first sln file in current directory"));
 
 rootCommand.Handler = CommandHandler.Create<string>(async slnPath =>
 {

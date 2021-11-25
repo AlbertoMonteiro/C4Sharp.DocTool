@@ -6,6 +6,10 @@
     "On HandingErrors": {
       "commandName": "Project",
       "workingDirectory": "C:\\Dev\\HandlingErrors"
+    },
+    "Help": {
+      "commandName": "Project",
+      "commandLineArgs": "--help"
     }
   }
 }
