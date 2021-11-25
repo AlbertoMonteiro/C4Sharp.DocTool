@@ -1,6 +1,7 @@
 ﻿using C4Sharp.DocTool;
 using C4Sharp.Models.Plantuml.IO;
 using System.CommandLine.Parsing;
+using System.Diagnostics;
 
 var rootCommand = new RootCommand();
 
@@ -45,6 +46,16 @@ rootCommand.Handler = CommandHandler.Create<string>(async slnPath =>
 
     var workspace = MSBuildWorkspace.Create();
     workspace.SkipUnrecognizedProjects = true;
+
+    ColorConsole.WriteLine(Timed("Running dotnet build".White()));
+    var dotnetProcess = Process.Start(new ProcessStartInfo(@"dotnet", $"build \"{slnPath}\"")
+    {
+        RedirectStandardError = true,
+        RedirectStandardInput = true,
+        RedirectStandardOutput = true
+    });
+    dotnetProcess!.WaitForExit();
+    ColorConsole.WriteLine(Timed("dotnet build complete".White()));
 
     ColorConsole.WriteLine(Timed("Starting analysis".White()));
     ApplicationDiagram.Init(slnPath);
