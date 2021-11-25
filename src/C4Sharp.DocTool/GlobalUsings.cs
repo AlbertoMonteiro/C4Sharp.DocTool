@@ -1,0 +1,10 @@
+﻿global using C4Sharp.DocTool.DependecyFinders;
+global using ColoredConsole;
+global using Microsoft.Build.Locator;
+global using Microsoft.CodeAnalysis;
+global using Microsoft.CodeAnalysis.CSharp;
+global using Microsoft.CodeAnalysis.CSharp.Syntax;
+global using Microsoft.CodeAnalysis.MSBuild;
+global using System.CommandLine;
+global using System.CommandLine.Invocation;
+global using static C4Sharp.DocTool.Extensions;

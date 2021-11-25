@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "C4Sharp.DocTool": {
+      "commandName": "Project"
+    },
+    "On HandingErrors": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Dev\\HandlingErrors"
+    }
+  }
+}
