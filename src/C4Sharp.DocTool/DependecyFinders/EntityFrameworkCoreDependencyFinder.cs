@@ -29,8 +29,8 @@ internal static class EntityFrameworkCoreDependencyFinder
             };
 
             ApplicationDiagram.AddContainer(container, owner, relationshipLabel, relationshipProtocol);
-            System.Diagnostics.Debug.WriteLine(xmlDoc);
+            return true;
         }
-        return true;
+        return false;
     }
 }

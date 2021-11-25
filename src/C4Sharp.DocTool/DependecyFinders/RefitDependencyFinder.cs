@@ -30,10 +30,9 @@ internal static class RefitDependencyFinder
                 };
 
                 ApplicationDiagram.AddContainer(container, owner, relationshipLabel, relationshipProtocol);
-                System.Diagnostics.Debug.WriteLine(xmlDoc);
-                break;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 }
