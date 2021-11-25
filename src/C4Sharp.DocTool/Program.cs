@@ -50,6 +50,8 @@ rootCommand.Handler = CommandHandler.Create<string>(async slnPath =>
                     continue;
                 if (EntityFrameworkCoreDependencyFinder.Find(typeDeclarationSyntax, compilation, xmlDoc))
                     continue;
+                if (GenericTypeDependencyFinder.Find(typeDeclarationSyntax, compilation, xmlDoc))
+                    continue;
             }
         }
     }
