@@ -10,6 +10,10 @@
     "Help": {
       "commandName": "Project",
       "commandLineArgs": "--help"
+    },
+    "With -s arg": {
+      "commandName": "Project",
+      "commandLineArgs": "-s \"C:\\Dev\\HandlingErrors\\HandlingErrors.sn\""
     }
   }
 }

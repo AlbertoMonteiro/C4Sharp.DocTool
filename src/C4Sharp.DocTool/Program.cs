@@ -1,13 +1,30 @@
 ﻿using C4Sharp.DocTool;
 using C4Sharp.Models.Plantuml.IO;
+using System.CommandLine.Parsing;
 
 var rootCommand = new RootCommand();
 
-rootCommand.AddOption(new Option<string>(new [] { "--slnPath", "-s" }, getDefaultValue: () => ".","The solution file path, if not informed it will search for the first sln file in current directory"));
+var slnOption = new Option<string>(new[] { "-s", "--slnPath" }, getDefaultValue: () => ".", "The solution file path, if not informed it will search for the first sln file in current directory")
+{
+    IsRequired = true,
+};
+slnOption.AddValidator(option =>
+{
+    var path = option.GetValueOrDefault<string>();
+
+    return path switch
+    {
+        "." => null,
+        _ when !File.Exists(path) => "The specified solution file does not exists",
+        _ when Path.GetExtension(path) != ".sln" => "This file is not a solution file",
+        _ => null
+    };
+});
+rootCommand.AddOption(slnOption);
 
 rootCommand.Handler = CommandHandler.Create<string>(async slnPath =>
 {
-    if (string.IsNullOrWhiteSpace(slnPath) || slnPath == ".")
+    if (slnPath == ".")
     {
         var slnFound = Directory.EnumerateFiles(Environment.CurrentDirectory, "*.sln").FirstOrDefault();
 
